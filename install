@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 help() {
   echo "Usage:"
   echo "  zmicro package install you-get <args...>"
