@@ -8,20 +8,17 @@ help() {
   echo ""
 }
 
-install() {
-  which you-get >>/dev/null 2>&1
-  if [ "$?" != "0" ]; then
-    pm install -y you-get
-  fi
-}
-
 core() {
   if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
     help
     exit 0
   fi
 
-  install
+  which you-get >>/dev/null 2>&1
+  if [ "$?" != "0" ]; then
+    pm install -y you-get
+  fi
+
   log::success "install you-get success."
 }
 
